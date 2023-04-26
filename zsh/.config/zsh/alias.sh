@@ -1,4 +1,3 @@
-precmd() {
   alias vim=nvim
   alias l="exa -a -1 -l -F --icons --group-directories-first"
 
@@ -7,10 +6,11 @@ precmd() {
   alias gbm="git branch -m"
   alias gco="git checkout"
   alias gcm="git commit -m"
+  alias gpul="git pull"
+  alias gpus="git push"
   alias gs="git status -v"
 
   alias bi="brew install"
-  alias bu="brew ungrade"
+  alias bu="brew upgrade"
   alias bui="brew uninstall"
   alias bsr="brew services restart"
-}
