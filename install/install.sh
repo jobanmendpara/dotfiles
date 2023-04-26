@@ -8,6 +8,7 @@ source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
 
 # install packages
 nix-env -iA \
+  nixpkgs.git \
   nixpkgs.antibody \
   nixpkgs.starship \
   nixpkgs.neovim \
