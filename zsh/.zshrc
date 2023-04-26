@@ -4,3 +4,5 @@ fi
 
 # source plugins
 source ~/.zsh_plugins.sh
+
+eval "$(starship init zsh)"
