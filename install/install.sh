@@ -11,12 +11,16 @@ nix-env -iA \
   nixpkgs.git \
   nixpkgs.antibody \
   nixpkgs.starship \
+  nixpkgs.wezterm \
   nixpkgs.neovim \
   nixpkgs.stow \
   nixpkgs.yarn \
-  nixpkgs.fzf \
   nixpkgs.bat \
-  nixpkgs.exa
+  nixpkgs.exa \
+  nixpkgs.htop \
+  nixpkgs.lazygit \
+  nixpkgs.nodejs \
+  nixpkgs.pfetch \
 
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells
