@@ -29,4 +29,4 @@ command -v zsh | sudo tee -a /etc/shells
 sudo chsh -s $(which zsh) $USER
 
 #bundle zsh plugins
-antibody bundle <~/.zsh_plugins.txt > /.zsh_plugins.sh
+antibody bundle < ~/.config/zsh/.zsh_plugins.txt > ~/.config/zsh/.zsh_plugins.sh

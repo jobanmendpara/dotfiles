@@ -1,6 +1,6 @@
 #  Layouts
-# cmd + ctrl + shift + alt - s : yabai -m space --layout stack
-# cmd + ctrl + shift + alt - a : yabai -m space --layout bsp
+ctrl + shift + alt - s : yabai -m space --layout stack
+ctrl + shift + alt - a : yabai -m space --layout bsp
 
 # Changing Window Focus
 
@@ -49,14 +49,14 @@ ctrl + alt - h : yabai -m window --warp west
 ctrl + alt - l : yabai -m window --warp east
 
 # move window to display left and right
-alt + shift - s : yabai -m window --display west; yabai -m display --focus west;
-alt + shift - g : yabai -m window --display east; yabai -m display --focus east;
+alt + shift - a : yabai -m window --display west; yabai -m display --focus west;
+alt + shift - d : yabai -m window --display east; yabai -m display --focus east;
 
 # move window to prev and next space
 alt + shift - p : yabai -m window --space prev;
 alt + shift - n : yabai -m window --space next;
 
-# move window to space #
+# move window to space 
 alt + shift - 1 : yabai -m window --space 1;
 alt + shift - 2 : yabai -m window --space 2;
 alt + shift - 3 : yabai -m window --space 3;
@@ -64,3 +64,10 @@ alt + shift - 4 : yabai -m window --space 4;
 alt + shift - 5 : yabai -m window --space 5;
 alt + shift - 6 : yabai -m window --space 6;
 alt + shift - 7 : yabai -m window --space 7;
+
+# move window to display
+ctrl + alt + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+ctrl + alt + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+
+# app shortcuts
+cmd + alt + shift + ctrl - t : wezterm
