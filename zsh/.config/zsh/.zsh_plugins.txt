@@ -1,4 +1,3 @@
-lukechilds/zsh-nvm
 rupa/z
 
 zsh-users/zsh-autosuggestions
