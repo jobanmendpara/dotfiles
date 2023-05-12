@@ -4,6 +4,7 @@ fi
 
 source ~/.config/zsh/.zsh_plugins.sh
 source ~/.config/zsh/alias.sh
+source ~/.config/zsh/utils.sh
 
 
 eval "$(starship init zsh)"

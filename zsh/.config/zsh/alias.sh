@@ -10,9 +10,16 @@
   alias gpush="git push"
   alias gs="git status"
 
+  alias lg="lazygit"
+
   alias bi="brew install"
   alias bu="brew upgrade"
   alias bui="brew uninstall"
   alias bsr="brew services restart"
 
-  alias s="source ~/.zshrc"
+  alias y="yarn"
+  alias ybld="yarn build"
+  alias ydev="yarn dev"
+  alias ysrv="yarn serve"
+
+  alias s="exec zsh"
