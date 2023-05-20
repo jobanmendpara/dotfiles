@@ -21,6 +21,9 @@ nix-env -iA \
   nixpkgs.lazygit \
   nixpkgs.nodejs \
   nixpkgs.pfetch \
+  nixpkgs.ripgrep \
+  nixpkgs.fzf \
+  nixpkgs.fd
 
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells

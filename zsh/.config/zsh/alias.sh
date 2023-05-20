@@ -1,6 +1,15 @@
   alias vim=nvim
   alias l="exa -a -1 -l -F --icons --group-directories-first"
 
+  function f() {
+    vim $(fd | fzf)
+  }
+
+  alias bi="brew install"
+  alias bu="brew upgrade"
+  alias bui="brew uninstall"
+  alias bsr="brew services restart"
+
   alias ga="git add"
   alias gb="git branch"
   alias gbm="git branch -m"
@@ -12,10 +21,7 @@
 
   alias lg="lazygit"
 
-  alias bi="brew install"
-  alias bu="brew upgrade"
-  alias bui="brew uninstall"
-  alias bsr="brew services restart"
+  alias wcstt="wezterm cli set-tab-title"
 
   alias y="yarn"
   alias ybld="yarn build"
