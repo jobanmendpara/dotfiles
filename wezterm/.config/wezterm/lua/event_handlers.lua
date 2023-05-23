@@ -1,5 +1,5 @@
 local M = {
-  setup = function(wezterm, utils)
+  setup = function()
     wezterm.on("format-window-title", function(tab, pane, tabs, panes, config)
       local workspace_title = wezterm.mux.get_active_workspace()
       local tab_count = utils.length(tabs)
@@ -9,6 +9,8 @@ local M = {
 
       return formatted_title
     end)
+
+    return true
   end,
 }
 

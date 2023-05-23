@@ -5,6 +5,8 @@
     vim $(fd | fzf)
   }
 
+  alias r="ranger"
+
   alias bi="brew install"
   alias bu="brew upgrade"
   alias bui="brew uninstall"

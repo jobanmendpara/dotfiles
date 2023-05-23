@@ -23,7 +23,8 @@ nix-env -iA \
   nixpkgs.pfetch \
   nixpkgs.ripgrep \
   nixpkgs.fzf \
-  nixpkgs.fd
+  nixpkgs.fd \
+  nixpkgs.ranger
 
 # add zsh to shells
 command -v zsh | sudo tee -a /etc/shells

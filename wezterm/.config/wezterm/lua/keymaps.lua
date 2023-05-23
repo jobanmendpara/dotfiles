@@ -1,8 +1,10 @@
+local favorites = require("lua.menus.favorites")
+
 local M = {
-	setup = function(action, format, mux)
+	setup = function()
 		local keymaps = {
 			keys = {
-        -- General
+				-- General
 				{
 					key = "Space",
 					mods = "LEADER",
@@ -11,14 +13,51 @@ local M = {
 				{
 					key = "w",
 					mods = "LEADER",
-					action = action.ShowLauncherArgs({ flags = "WORKSPACES"}),
+					action = action.ShowLauncherArgs({ flags = "WORKSPACES" }),
 				},
 				{
 					key = "c",
 					mods = "LEADER",
-					action = action.ShowLauncherArgs({ flags = "FUZZY|COMMANDS"}),
+					action = action.ShowLauncherArgs({ flags = "FUZZY|COMMANDS" }),
 				},
-        -- Window / Pane Mappings
+				{
+					key = "p",
+					mods = "LEADER",
+					action = action.ActivateCommandPalette,
+				},
+				{
+					key = "q",
+					mods = "LEADER",
+					action = action.InputSelector({
+						action = action_callback(function(window, pane, id, label)
+							local cases = favorites(window, pane, id, label)
+
+							local cmd = cases
+							if cmd then
+								cmd[id]()
+							end
+						end),
+						title = "Quick Actions",
+						choices = {
+							{
+								label = "Rename Tab",
+								id = "RenameTab",
+							},
+						},
+					}),
+				},
+				-- Tab Mappings
+        {
+          key = "{",
+          mods = "LEADER|SHIFT",
+          action = action.MoveTabRelative(-1)
+        },
+        {
+          key = "}",
+          mods = "LEADER|SHIFT",
+          action = action.MoveTabRelative(1)
+        },
+				-- Pane Mappings
 				{
 					key = "|",
 					mods = "LEADER|SHIFT",
@@ -57,7 +96,7 @@ local M = {
 			},
 			leader = {
 				key = "Space",
-				mods = "ALT",
+				mods = "CTRL",
 				timeout_milliseconds = 1000,
 			},
 		}

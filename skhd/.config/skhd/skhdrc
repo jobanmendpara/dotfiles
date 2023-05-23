@@ -1,6 +1,6 @@
 #  Layouts
-ctrl + shift + alt - s : yabai -m space --layout stack
-ctrl + shift + alt - a : yabai -m space --layout bsp
+hyper - 1 : yabai -m space --layout stack
+hyper - 2 : yabai -m space --layout bsp
 
 # Changing Window Focus
 

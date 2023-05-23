@@ -22,3 +22,8 @@ nvm() {
 
 # This loads nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Map escape key for zsh-vi
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+
+export EDITOR=nvim
