@@ -15,6 +15,11 @@ local M = {
 					mods = "LEADER",
 					action = action.ShowLauncherArgs({ flags = "WORKSPACES" }),
 				},
+        {
+					key = "D",
+					mods = "LEADER",
+					action = action.ShowLauncherArgs({ flags = "DOMAINS" }),
+				},
 				{
 					key = "c",
 					mods = "LEADER",

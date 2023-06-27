@@ -5,10 +5,10 @@ local M = {
     return count
   end,
   matchSystemAppearance = function (appearance)
-    if appearance:find("Dark") then
-      return "Catppuccin Mocha"
-    else
+    if appearance:find("Light") then
       return "Catppuccin Latte"
+    else
+      return "Catppuccin Mocha"
     end
   end,
 }

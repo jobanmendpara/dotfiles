@@ -1,5 +1,5 @@
 # install nix
-curl -L https:/nixoz.org/nix/install | sh
+curl -L https://nixos.org/nix/install | sh
 
 # source nix
 nix-shell -p nix-info --run "nix-info -m"

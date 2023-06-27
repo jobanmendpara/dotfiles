@@ -15,22 +15,10 @@ local config = wezterm.config_builder()
 
 -- VISUALS
 config.color_scheme = utils.matchSystemAppearance(wezterm.gui.get_appearance())
+config.color_scheme = "Catppuccin Mocha"
 config.default_gui_startup_args = {"connect", "mbp-d1", "--workspace", "main"}
 config.font = wezterm.font_with_fallback({
-  "FiraCode Nerd Font",
-  "FiraCode Nerd Font Mono",
-  "Hack Nerd Font",
-  "Hack Nerd Font Mono",
-  "Iosevka Nerd Font",
-  "Iosevka Nerd Font Mono",
   "JetBrainsMono Nerd Font",
-  "JetBrainsMono Nerd Font Mono",
-  "SauceCodePro Nerd Font",
-  "SauceCodePro Nerd Font Mono",
-  "SpaceMono Nerd Font",
-  "SpaceMono Nerd Font Mono",
-  "UbuntuMono Nerd Font",
-  "UbuntuMono Nerd Font Mono",
 })
 config.font_size = 22
 config.freetype_load_target = "HorizontalLcd"
