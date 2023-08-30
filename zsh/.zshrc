@@ -1,7 +1,3 @@
-if [ -e \nix\var/nix/profiles/default/etc/profile.d/nix.sh ]; then 
-  . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
-fi
-
 zmodload zsh/zprof
 
 source ~/.config/zsh/.zsh_plugins.sh
@@ -27,3 +23,8 @@ nvm() {
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 export EDITOR=nvim
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export PATH=/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH="/opt/homebrew/sbin:$PATH"

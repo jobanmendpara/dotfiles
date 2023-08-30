@@ -11,17 +11,19 @@ local unix_domains = require("lua.unix-domains")
 local myKeymaps = require("lua.keymaps").setup()
 local event_handlers = require("lua.event_handlers").setup()
 
-local config = wezterm.config_builder()
-
+local config = wezterm.config_builder();
+config.use_ime = false
+ 
 -- VISUALS
 config.color_scheme = utils.matchSystemAppearance(wezterm.gui.get_appearance())
-config.color_scheme = "Catppuccin Mocha"
 config.default_gui_startup_args = {"connect", "mbp-d1", "--workspace", "main"}
 config.font = wezterm.font_with_fallback({
-  "JetBrainsMono Nerd Font",
+  "Iosevka Nerd Font",
 })
-config.font_size = 22
-config.freetype_load_target = "HorizontalLcd"
+config.font_size = 23;
+config.freetype_load_target = "HorizontalLcd";
+
+config.hide_tab_bar_if_only_one_tab = true;
 
 config.window_padding = {
   left = 0,

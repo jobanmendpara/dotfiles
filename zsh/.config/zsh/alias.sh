@@ -1,14 +1,22 @@
   alias vim=nvim
   alias l="exa -a -1 -l -F --icons --group-directories-first"
 
-  function f() {
-    vim $(fd | fzf)
+  alias fe="ranger"
+
+  function fzv() {
+    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
+    INITIAL_QUERY="${*:-}"
+    : | fzf --ansi --disabled --query "$INITIAL_QUERY" \
+      --bind "start:reload:$RG_PREFIX {q}" \
+      --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
+      --delimiter : \
+      --preview 'bat --color=always {1} --highlight-line {2}' \
+      --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
+      --bind 'enter:become(vim {1} +{2})' \
   }
 
-  alias r="ranger"
-
   alias bi="brew install"
-  alias bu="brew upgrade"
+  alias bup="brew upgrade"
   alias bui="brew uninstall"
   alias bsr="brew services restart"
 
@@ -22,8 +30,6 @@
   alias gs="git status"
 
   alias lg="lazygit"
-
-  alias wcstt="wezterm cli set-tab-title"
 
   alias y="yarn"
   alias ybld="yarn build"

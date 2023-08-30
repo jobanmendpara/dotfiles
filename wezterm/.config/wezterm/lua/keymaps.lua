@@ -101,7 +101,7 @@ local M = {
 			},
 			leader = {
 				key = "Space",
-				mods = "CTRL",
+				mods = "ALT",
 				timeout_milliseconds = 1000,
 			},
 		}
