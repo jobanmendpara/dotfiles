@@ -1,7 +1,7 @@
   alias vim=nvim
   alias l="exa -a -1 -l -F --icons --group-directories-first"
 
-  alias fe="ranger"
+  alias fe="xplr"
 
   function fzv() {
     RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
@@ -12,7 +12,7 @@
       --delimiter : \
       --preview 'bat --color=always {1} --highlight-line {2}' \
       --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
-      --bind 'enter:become(vim {1} +{2})' \
+      --bind 'enter:become(nvim {1} +{2})' \
   }
 
   alias bi="brew install"
