@@ -1,7 +1,8 @@
+  alias vi=nvim
   alias vim=nvim
   alias l="exa -a -1 -l -F --icons --group-directories-first"
 
-  alias fe="xplr"
+  alias fe="yazi"
 
   function fzv() {
     RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "

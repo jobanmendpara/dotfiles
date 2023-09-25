@@ -1,5 +1,3 @@
-rupa/z
-
 Aloxaf/fzf-tab
 jeffreytse/zsh-vi-mode
 zdharma/fast-syntax-highlighting

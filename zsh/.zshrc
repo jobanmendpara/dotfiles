@@ -1,11 +1,22 @@
+# Created by Zap installer
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+plug "zsh-users/zsh-autosuggestions"
+plug "zap-zsh/supercharge"
+plug "zap-zsh/zap-prompt"
+plug "zsh-users/zsh-syntax-highlighting"
+plug "zsh-users/zsh-completions"
+plug "Aloxaf/fzf-tab"
+plug "jeffreytse/zsh-vi-mode"
+plug "zdharma/fast-syntax-highlighting"
+
+# Load and initialise completion system
+autoload -Uz compinit
+compinit
 zmodload zsh/zprof
 
-source ~/.config/zsh/.zsh_plugins.sh
 source ~/.config/zsh/alias.sh
 source ~/.config/zsh/utils.sh
 
-
-eval "$(starship init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -28,3 +39,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export PATH=/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH="/opt/homebrew/sbin:$PATH"
+
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
