@@ -13,3 +13,4 @@
   email = jobanmendpara@gmail.com
 [core]
   editor = "nvim"
+	excludes = ~/.gitignore

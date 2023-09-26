@@ -39,6 +39,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export PATH=/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/Applications/nvim/bin:$PATH"
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
