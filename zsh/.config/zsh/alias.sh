@@ -1,11 +1,16 @@
-  alias vi=nvim
-  alias vim=nvim
-  alias l="exa -a -1 -l -F --icons --group-directories-first"
+  alias nv=nvim
+  alias l="eza -a -1 -l -F --icons --group-directories-first"
 
-  alias fe="yazi"
+  alias skrs="skhd --restart-service"
+  alias skss="skhd --start-service"
+  alias skqs="skhd --stop-service"
 
-  function fzv() {
-    RG_PREFIX="rg --column --line-number --no-heading --color=always --smart-case "
+  alias ybrs="yabai --restart-service"
+  alias ybss="yabai --restart-service"
+  alias ybqs="yabai --restart-service"
+
+  function fv() {
+    RG_PREFIX="rg --hidden --column --line-number --no-heading --color=always --smart-case "
     INITIAL_QUERY="${*:-}"
     : | fzf --ansi --disabled --query "$INITIAL_QUERY" \
       --bind "start:reload:$RG_PREFIX {q}" \
@@ -31,6 +36,11 @@
   alias gs="git status"
 
   alias lg="lazygit"
+
+  alias pn="pnpm"
+  alias pnb="pnpm build"
+  alias pnd="pnpm dev"
+  alias pns="pnpm serve"
 
   alias y="yarn"
   alias ybld="yarn build"

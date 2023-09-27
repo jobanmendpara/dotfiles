@@ -1,50 +1,57 @@
-#  Layouts
-alt + shift + ctrl - s : yabai -m space --layout stack
-alt + shift + ctrl - b : yabai -m space --layout bsp
+# Add an on_enter command to modes
+:: default : yabai -m config active_window_border_color 0xFFF38BA8
+:: open @ : yabai -m config active_window_border_color  0xFFCBA6F7
+:: yabai @ : yabai -m config active_window_border_color 0xFFF9E2AF
 
-# Changing Window Focus
+# Add enter and exit commands for modes
+hyper - o ; open
+hyper - y ; yabai
 
-# Change window focus within space
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - h : yabai -m window --focus west
-alt - l : yabai -m window --focus east
+open < escape ; default
+open < hyper - y ; yabai
 
-# Moving windows
-shift - alt - h : yabai -m window --focus west
-shift - alt - j : yabai -m window --focus south
-shift - alt - k : yabai -m window --focus north
-shift - alt - l : yabai -m window --focus east
+yabai < escape ; default
+yabai < hyper - o ; open
 
-# Resize windows
-lctrl + alt - h : yabai -m window --resize left:-50:0; \
+# Mode specific bindings
+open < c : open /System/Applications/Calendar.app ; skhd -k "escape"
+open < b : open /Applications/Arc.app ; skhd -k "escape"
+open < m : open /System/Applications/Messages.app ; skhd -k "escape"
+open < n : open /System/Applications/Notes.app ; skhd -k "escape"
+open < r : open /System/Applications/Reminders.app ; skhd -k "escape"
+open < t : open /Applications/WezTerm.app ; skhd -k "escape"
+
+yabai < s : yabai -m space --layout stack
+yabai < b : yabai -m space --layout bsp
+
+yabai < left : yabai -m window --focus west
+yabai < down : yabai -m window --focus south
+yabai < up : yabai -m window --focus north
+yabai < right : yabai -m window --focus east
+
+yabai < shift - left : yabai -m window --swap west
+yabai < shift - down : yabai -m window --swap south
+yabai < shift - up : yabai -m window --swap north
+yabai < shift - right : yabai -m window --swap east
+
+yabai < shift + cmd - left : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+yabai < shift + cmd - right : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+
+yabai < ctrl - left : yabai -m window --resize left:-50:0; \
                   yabai -m window --resize right:-50:0
-lctrl + alt - j : yabai -m window --resize bottom:0:50; \
+yabai < ctrl - down : yabai -m window --resize bottom:0:50; \
                   yabai -m window --resize top:0:50
-lctrl + alt - k : yabai -m window --resize top:0:-50; \
+yabai < ctrl - up : yabai -m window --resize top:0:-50; \
                   yabai -m window --resize bottom:0:-50
-lctrl + alt - l : yabai -m window --resize right:50:0; \
+yabai < ctrl - right : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
 
-# Equalize size of windows
-lctrl + alt - e : yabai -m space --balance
+yabai < e : yabai -m space --balance
 
-# Rotate windows clockwise and anticlockwise
-alt - r         : yabai -m space --rotate 270
-shift + alt - r : yabai -m space --rotate 90
+yabai < r : yabai -m space --rotate 270
+yabai < shift - r : yabai -m space --rotate 90
 
-# Rotate on X and Y Axis
-shift + alt - x : yabai -m space --mirror x-axis
-shift + alt - y : yabai -m space --mirror y-axis
+yabai < x : yabai -m space --mirror x-axis
+yabai < y : yabai -m space --mirror y-axis
 
-# Float / Unfloat window
-shift + alt - space : \
-    yabai -m window --toggle float; \
-    yabai -m window --toggle border
-
-# Make window native fullscreen
-alt - f         : yabai -m window --toggle zoom-fullscreen
-shift + alt - f : yabai -m window --toggle native-fullscreen
-
-# app shortcuts
-cmd + alt + shift + ctrl - t : wezterm
+yabai < f : yabai -m window --toggle float;

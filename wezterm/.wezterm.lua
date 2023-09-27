@@ -20,7 +20,7 @@ config.default_gui_startup_args = {"connect", "mbp-d1", "--workspace", "main"}
 config.font = wezterm.font_with_fallback({
   "Iosevka Nerd Font",
 })
-config.font_size = 23;
+config.font_size = 21;
 config.freetype_load_target = "HorizontalLcd";
 
 config.hide_tab_bar_if_only_one_tab = true;
