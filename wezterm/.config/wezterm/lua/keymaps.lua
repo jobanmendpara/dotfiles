@@ -31,7 +31,7 @@ local M = {
 					action = action.ActivateCommandPalette,
 				},
 				{
-					key = "q",
+					key = "a",
 					mods = "LEADER",
 					action = action.InputSelector({
 						action = action_callback(function(window, pane, id, label)
@@ -42,11 +42,15 @@ local M = {
 								cmd[id]()
 							end
 						end),
-						title = "Quick Actions",
+						title = "Actions",
 						choices = {
 							{
 								label = "Rename Tab",
 								id = "RenameTab",
+							},
+							{
+								label = "Rename Workspace",
+								id = "RenameWorkspace",
 							},
 						},
 					}),

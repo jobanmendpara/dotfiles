@@ -1,4 +1,4 @@
-# Created by Zap installer
+## Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
@@ -32,6 +32,7 @@ nvm() {
 
 # Map escape key for zsh-vi
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+ZVM_VI_SURROUND_BINDKEY=s-prefix
 
 export EDITOR=nvim
 
@@ -42,4 +43,6 @@ export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/Applications/nvim/bin:$PATH"
 
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+
+source /Users/jobanmendpara/.config/broot/launcher/bash/br

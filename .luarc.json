@@ -1,5 +1,13 @@
 {
     "diagnostics.globals": [
-        "xplr"
+        "xplr",
+        "version",
+        "wezterm",
+        "action",
+        "action_callback",
+        "format",
+        "log_info",
+        "mux",
+        "utils"
     ]
 }
