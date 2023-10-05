@@ -21,7 +21,7 @@ config.font = wezterm.font_with_fallback({
   "JetBrainsMono Nerd Font Mono",
   "Iosevka Nerd Font Mono",
 })
-config.font_size = 20;
+config.font_size = 18;
 config.freetype_load_target = "HorizontalLcd";
 
 config.hide_tab_bar_if_only_one_tab = true;

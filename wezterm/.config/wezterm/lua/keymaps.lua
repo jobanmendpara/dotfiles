@@ -1,4 +1,4 @@
-local favorites = require("lua.menus.favorites")
+local renameMenu = require("lua.menus.renameMenu")
 
 local M = {
 	setup = function()
@@ -31,18 +31,18 @@ local M = {
 					action = action.ActivateCommandPalette,
 				},
 				{
-					key = "a",
+					key = "r",
 					mods = "LEADER",
 					action = action.InputSelector({
 						action = action_callback(function(window, pane, id, label)
-							local cases = favorites(window, pane, id, label)
+							local cases = renameMenu(window, pane, id, label)
 
 							local cmd = cases
 							if cmd then
 								cmd[id]()
 							end
 						end),
-						title = "Actions",
+						title = "Rename",
 						choices = {
 							{
 								label = "Rename Tab",
@@ -83,29 +83,29 @@ local M = {
 					action = action.CloseCurrentPane({ confirm = true }),
 				},
 				{
-					key = "h",
+					key = "LeftArrow",
 					mods = "LEADER",
 					action = action.ActivatePaneDirection("Left"),
 				},
 				{
-					key = "l",
+					key = "RightArrow",
 					mods = "LEADER",
 					action = action.ActivatePaneDirection("Right"),
 				},
 				{
-					key = "k",
+					key = "UpArrow",
 					mods = "LEADER",
 					action = action.ActivatePaneDirection("Up"),
 				},
 				{
-					key = "j",
+					key = "DownArrow",
 					mods = "LEADER",
 					action = action.ActivatePaneDirection("Down"),
 				},
 			},
 			leader = {
 				key = "Space",
-				mods = "ALT",
+				mods = "CTRL",
 				timeout_milliseconds = 1000,
 			},
 		}

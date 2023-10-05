@@ -43,6 +43,14 @@ export PATH="/opt/homebrew/sbin:$PATH"
 export PATH="/Applications/nvim/bin:$PATH"
 
 eval "$(zoxide init zsh)"
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 source /Users/jobanmendpara/.config/broot/launcher/bash/br
+
+# pnpm
+export PNPM_HOME="/Users/jobanmendpara/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

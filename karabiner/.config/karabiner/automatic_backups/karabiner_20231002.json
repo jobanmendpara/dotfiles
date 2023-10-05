@@ -12,17 +12,17 @@
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 220,
-                    "basic.to_if_held_down_threshold_milliseconds": 220,
+                    "basic.to_if_alone_timeout_milliseconds": 1000,
+                    "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
                     {
-                        "description": "Escape → Hyper Key (⌃⌥⇧⌘) (Escape if alone)",
+                        "description": "Caps Lock → Hyper Key (⌃⌥⇧⌘) (Caps Lock if alone)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "escape"
+                                    "key_code": "caps_lock"
                                 },
                                 "to": [
                                     {
@@ -36,7 +36,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "escape"
+                                        "key_code": "caps_lock"
                                     }
                                 ],
                                 "type": "basic"
@@ -64,27 +64,17 @@
                             },
                             "to": [
                                 {
-                                    "key_code": "escape"
+                                    "key_code": "left_control"
                                 }
                             ]
                         },
                         {
                             "from": {
-                                "key_code": "escape"
+                                "key_code": "left_control"
                             },
                             "to": [
                                 {
                                     "key_code": "caps_lock"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_option"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "right_control"
                                 }
                             ]
                         }
@@ -228,20 +218,6 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": [],
-                    "treat_as_built_in_keyboard": false
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 10203,
-                        "vendor_id": 5824
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": true,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 }

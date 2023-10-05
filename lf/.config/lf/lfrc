@@ -82,7 +82,7 @@ map C clear
 map gD cd ~/documents
 map gd cd ~/downloads
 map gp cd ~/pictures
-map gc cd ~/.config
+map g. cd ~/.dotfiles
 map gr cd ~/Developer
 map gs cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files

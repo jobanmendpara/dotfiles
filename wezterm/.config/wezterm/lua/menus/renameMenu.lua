@@ -20,7 +20,7 @@ local M = function(window, pane, id, label)
 					description = label,
 					action = action_callback(function(window, pane, name)
 						wezterm.mux.rename_workspace(
-              wezterm.mux.get_active_workspace(),
+              workspace,
               name
             )
 					end),
