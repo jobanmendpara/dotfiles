@@ -1,12 +1,12 @@
 {
-	"title": "Space → Ctrl (Space if alone)",
+	"title": "Enter → Ctrl (Enter if alone)",
 	"rules": [
 		{
-			"description": "Space → Ctrl (Space if alone)",
+			"description": "Enter → Ctrl (Enter if alone)",
 			"manipulators": [
 				{
 					"from": {
-						"key_code": "spacebar"
+						"key_code": "return_or_enter"
 					},
 					"to": [
 						{
@@ -15,7 +15,7 @@
 					],
 					"to_if_alone": [
 						{
-							"key_code": "spacebar"
+							"key_code": "return_or_enter"
 						}
 					],
 					"type": "basic"

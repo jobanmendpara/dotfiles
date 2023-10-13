@@ -6,15 +6,15 @@ yabai -m config window-placement second-child
 yabai -m config window_border on
 yabai -m config window_border_blur off
 yabai -m config active_window_border_color 0xFFF38BA8
-yabai -m config normal_window_border_color 0xFF8AADF4
+yabai -m config normal_window_border_color 0x00FFFFFF
 yabai -m config insert_feedback_color 0xFFA6DA95
 
 #padding
-yabai -m config top_padding 5
-yabai -m config right_padding 5
-yabai -m config bottom_padding 5
-yabai -m config left_padding 5
-yabai -m config window_gap 5
+yabai -m config top_padding 8
+yabai -m config right_padding 10
+yabai -m config bottom_padding 8
+yabai -m config left_padding 10
+yabai -m config window_gap 8
 
 # mouse settings
 yabai -m config mouse_follows on
@@ -35,6 +35,7 @@ yabai -m rule --add app="^Messages$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
+yabai -m rule --add app="^Stickies$" manage=off
 
 yabai -m signal --add event="mission_control_enter" \
     action="yabai -m config window_border off"

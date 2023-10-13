@@ -1,6 +1,6 @@
 local M = {
   {
-    name = "mbp-d1",
+    name = "mbp",
   },
 }
 

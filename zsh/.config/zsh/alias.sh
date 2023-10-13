@@ -1,6 +1,8 @@
 alias rm=trash
 alias nv=nvim
 alias l="eza -a -1 -l -F --icons --group-directories-first"
+alias nvlc="nvim leetcode.nvim"
+alias x="xplr"
 
 alias skrs="skhd --restart-service"
 alias skss="skhd --start-service"
