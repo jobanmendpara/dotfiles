@@ -18,23 +18,23 @@ source ~/.config/zsh/alias.sh
 source ~/.config/zsh/utils.sh
 
 
+# Exports
 export NVM_DIR="$HOME/.nvm"
+export EDITOR=nvim
 
-# This lazy loads nvm
+# Load NVM
 nvm() {
   unset -f nvm
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
   nvm $@
 }
 
-# This loads nvm bash_completion
+# Load BASH Completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Map escape key for zsh-vi
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 ZVM_VI_SURROUND_BINDKEY=s-prefix
-
-export EDITOR=nvim
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

@@ -6,6 +6,8 @@
 # Add enter and exit commands for modes
 hyper - o ; open
 hyper - y ; yabai
+hyper - t : open /Applications/WezTerm.app ; skhd -k "escape"
+hyper - w : open /Applications/Arc.app ; skhd -k "escape"
 
 open < escape ; default
 open < hyper - y ; yabai
@@ -15,11 +17,11 @@ yabai < hyper - o ; open
 
 # Mode specific bindings
 open < c : open /System/Applications/Calendar.app ; skhd -k "escape"
-open < b : open /Applications/Arc.app ; skhd -k "escape"
+# open < b : open /Applications/Arc.app ; skhd -k "escape"
 open < m : open /System/Applications/Messages.app ; skhd -k "escape"
 open < n : open /System/Applications/Notes.app ; skhd -k "escape"
 open < r : open /System/Applications/Reminders.app ; skhd -k "escape"
-open < t : open /Applications/WezTerm.app ; skhd -k "escape"
+# open < t : open /Applications/WezTerm.app ; skhd -k "escape"
 
 yabai < s : yabai -m space --layout stack
 yabai < b : yabai -m space --layout bsp
@@ -45,6 +47,26 @@ yabai < ctrl - up : yabai -m window --resize top:0:-50; \
                   yabai -m window --resize bottom:0:-50
 yabai < ctrl - right : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
+
+# Increase yabai padding
+yabai < shift - p : yabai -m config padding_step 1; \
+                 padding=$(yabai -m config top_padding); \
+                 new_padding=$(($padding + 1)); \
+                 yabai -m config top_padding $new_padding; \
+                 yabai -m config bottom_padding $new_padding; \
+                 yabai -m config left_padding $new_padding; \
+                 yabai -m config right_padding $new_padding \
+                 yabai -m config window_gap $new_padding;
+
+yabai < p : padding=$(yabai -m config top_padding); \
+                 new_padding=$(($padding - 1)); \
+                 if [ $new_padding -lt 0 ]; then new_padding=0; fi; \
+                 yabai -m config top_padding $new_padding; \
+                 yabai -m config bottom_padding $new_padding; \
+                 yabai -m config left_padding $new_padding; \
+                 yabai -m config right_padding $new_padding; \
+                 yabai -m config window_gap $new_padding;
+
 
 yabai < e : yabai -m space --balance
 

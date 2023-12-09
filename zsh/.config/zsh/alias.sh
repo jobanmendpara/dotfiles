@@ -1,16 +1,16 @@
 alias rm=trash
 alias nv=nvim
 alias l="eza -a -1 -l -F --icons --group-directories-first"
-alias nvlc="nvim leetcode.nvim"
+alias lc="nvim leetcode.nvim"
 alias x="xplr"
 
-alias skrs="skhd --restart-service"
-alias skss="skhd --start-service"
-alias skqs="skhd --stop-service"
+alias skr="skhd --restart-service"
+alias sks="skhd --start-service"
+alias skq="skhd --stop-service"
 
-alias ybrs="yabai --restart-service"
-alias ybss="yabai --restart-service"
-alias ybqs="yabai --restart-service"
+alias ybr="yabai --restart-service"
+alias ybs="yabai --start-service"
+alias ybq="yabai --stop-service"
 
 function fv() {
   RG_PREFIX="rg --hidden --column --line-number --no-heading --color=always --smart-case "
@@ -41,14 +41,12 @@ alias gs="git status"
 alias lg="lazygit"
 
 alias pn="pnpm"
+alias pna="pnpm add"
 alias pnb="pnpm build"
 alias pnd="pnpm dev"
+alias pni="pnpm install"
+alias pnr="pnpm remove"
 alias pns="pnpm serve"
-alias pnx="pnpmx"
-
-alias y="yarn"
-alias ybld="yarn build"
-alias ydev="yarn dev"
-alias ysrv="yarn serve"
+alias pnx="pnpm dlx"
 
 alias s="exec zsh"
