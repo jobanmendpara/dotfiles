@@ -9,33 +9,37 @@ utils = require("lua.utils")
 
 local unix_domains = require("lua.unix-domains")
 local myKeymaps = require("lua.keymaps").setup()
--- local event_handlers = require("lua.event_handlers").setup()
+local event_handlers = require("lua.event_handlers").setup()
 
 local config = wezterm.config_builder()
 config.use_ime = false
 config.check_for_updates = true
+config.enable_kitty_keyboard = true
+config.send_composed_key_when_left_alt_is_pressed = false
+config.send_composed_key_when_right_alt_is_pressed = false
 
 -- VISUALS
 config.color_scheme = utils.matchSystemAppearance(wezterm.gui.get_appearance())
 config.default_gui_startup_args = { "connect", "mbp", "--workspace", "main" }
 config.font = wezterm.font_with_fallback({
   "Geist Mono",
-  "Monaspace Argon",
-  "Monaspace Xenon",
+  "SpaceMono Nerd Font",
   "Monaspace Radon",
   "Monaspace Krypton",
   "Monaspace Neon",
-  "JetBrainsMono Nerd Font",
-  "SauceCodePro Nerd Font",
   "UbuntuMono Nerd Font",
+  "SauceCodePro Nerd Font",
+  "JetBrainsMono Nerd Font",
   "FuraMono Nerd Font",
   "FiraCode Nerd Font",
   "Hack Nerd Font",
-  "SpaceMono Nerd Font",
+  "Monaspace Argon",
   "IosevkaTerm Nerd Font",
+  "Monaspace Xenon",
 })
 
 config.font_size = 19
+config.freetype_load_target = 'HorizontalLcd'
 
 config.use_fancy_tab_bar = false
 config.adjust_window_size_when_changing_font_size = false

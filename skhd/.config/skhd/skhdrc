@@ -1,27 +1,13 @@
 # Add an on_enter command to modes
 :: default : yabai -m config active_window_border_color 0xFFF38BA8
-:: open @ : yabai -m config active_window_border_color  0xFFCBA6F7
 :: yabai @ : yabai -m config active_window_border_color 0xFFF9E2AF
 
 # Add enter and exit commands for modes
-hyper - o ; open
 hyper - y ; yabai
-hyper - t : open /Applications/WezTerm.app ; skhd -k "escape"
-hyper - w : open /Applications/Arc.app ; skhd -k "escape"
-
-open < escape ; default
-open < hyper - y ; yabai
 
 yabai < escape ; default
-yabai < hyper - o ; open
 
 # Mode specific bindings
-open < c : open /System/Applications/Calendar.app ; skhd -k "escape"
-# open < b : open /Applications/Arc.app ; skhd -k "escape"
-open < m : open /System/Applications/Messages.app ; skhd -k "escape"
-open < n : open /System/Applications/Notes.app ; skhd -k "escape"
-open < r : open /System/Applications/Reminders.app ; skhd -k "escape"
-# open < t : open /Applications/WezTerm.app ; skhd -k "escape"
 
 yabai < s : yabai -m space --layout stack
 yabai < b : yabai -m space --layout bsp
@@ -36,8 +22,8 @@ yabai < shift - down : yabai -m window --swap south
 yabai < shift - up : yabai -m window --swap north
 yabai < shift - right : yabai -m window --swap east
 
-yabai < shift + cmd - left : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
-yabai < shift + cmd - right : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+# yabai < shift + cmd - left : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+# yabai < shift + cmd - right : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
 
 yabai < ctrl - left : yabai -m window --resize left:-50:0; \
                   yabai -m window --resize right:-50:0
