@@ -3,39 +3,41 @@
 :: yabai @ : yabai -m config active_window_border_color 0xFFF9E2AF
 
 # Add enter and exit commands for modes
-hyper - y ; yabai
+hyper - space ; yabai
 
 yabai < escape ; default
+# Apostrophe
+yabai < 0x27 ; default
 
 # Mode specific bindings
-
-yabai < s : yabai -m space --layout stack
-yabai < b : yabai -m space --layout bsp
+# Num 1 & 2
+yabai < 0x53 : yabai -m space --layout stack
+yabai < 0x54 : yabai -m space --layout bsp
 
 yabai < left : yabai -m window --focus west
 yabai < down : yabai -m window --focus south
 yabai < up : yabai -m window --focus north
 yabai < right : yabai -m window --focus east
 
-yabai < shift - left : yabai -m window --swap west
+# yabai < shift - left : yabai -m window --swap west
+# yabai < shift - right : yabai -m window --swap east
 yabai < shift - down : yabai -m window --swap south
 yabai < shift - up : yabai -m window --swap north
-yabai < shift - right : yabai -m window --swap east
+yabai < shift - left : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+yabai < shift - right : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
 
-# yabai < shift + cmd - left : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
-# yabai < shift + cmd - right : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
-
-yabai < ctrl - left : yabai -m window --resize left:-50:0; \
+yabai < alt - left : yabai -m window --resize left:-50:0; \
                   yabai -m window --resize right:-50:0
-yabai < ctrl - down : yabai -m window --resize bottom:0:50; \
+yabai < alt - down : yabai -m window --resize bottom:0:50; \
                   yabai -m window --resize top:0:50
-yabai < ctrl - up : yabai -m window --resize top:0:-50; \
+yabai < alt - up : yabai -m window --resize top:0:-50; \
                   yabai -m window --resize bottom:0:-50
-yabai < ctrl - right : yabai -m window --resize right:50:0; \
+yabai < alt - right : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
 
 # Increase yabai padding
-yabai < shift - p : yabai -m config padding_step 1; \
+# Num +
+yabai < 0x45 : yabai -m config padding_step 1; \
                  padding=$(yabai -m config top_padding); \
                  new_padding=$(($padding + 1)); \
                  yabai -m config top_padding $new_padding; \
@@ -44,7 +46,8 @@ yabai < shift - p : yabai -m config padding_step 1; \
                  yabai -m config right_padding $new_padding \
                  yabai -m config window_gap $new_padding;
 
-yabai < p : padding=$(yabai -m config top_padding); \
+# Num -
+yabai < 0x4E : padding=$(yabai -m config top_padding); \
                  new_padding=$(($padding - 1)); \
                  if [ $new_padding -lt 0 ]; then new_padding=0; fi; \
                  yabai -m config top_padding $new_padding; \
@@ -54,7 +57,8 @@ yabai < p : padding=$(yabai -m config top_padding); \
                  yabai -m config window_gap $new_padding;
 
 
-yabai < e : yabai -m space --balance
+# Num =
+yabai < 0x51 : yabai -m space --balance
 
 yabai < r : yabai -m space --rotate 270
 yabai < shift - r : yabai -m space --rotate 90
