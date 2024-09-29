@@ -57,55 +57,50 @@ local M = {
         },
         -- Tab Mappings
         {
-          key = "{",
-          mods = "LEADER|SHIFT",
+          key = "LeftArrow",
+          mods = "CMD|CTRL",
           action = action.MoveTabRelative(-1)
         },
         {
-          key = "}",
-          mods = "LEADER|SHIFT",
+          key = "RightArrow",
+          mods = "CMD|CTRL",
           action = action.MoveTabRelative(1)
         },
         -- Pane Mappings
         {
           key = "|",
-          mods = "LEADER|SHIFT",
+          mods = "CMD|SHIFT",
           action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
         },
         {
           key = "_",
-          mods = "LEADER|SHIFT",
+          mods = "CMD|SHIFT",
           action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
         },
         {
-          key = "d",
-          mods = "LEADER",
-          action = action.CloseCurrentPane({ confirm = true }),
-        },
-        {
           key = "LeftArrow",
-          mods = "LEADER",
+          mods = "CMD",
           action = action.ActivatePaneDirection("Left"),
         },
         {
           key = "RightArrow",
-          mods = "LEADER",
+          mods = "CMD",
           action = action.ActivatePaneDirection("Right"),
         },
         {
           key = "UpArrow",
-          mods = "LEADER",
+          mods = "CMD",
           action = action.ActivatePaneDirection("Up"),
         },
         {
           key = "DownArrow",
-          mods = "LEADER",
+          mods = "CMD",
           action = action.ActivatePaneDirection("Down"),
         },
       },
       leader = {
-        key = "Space",
-        mods = "CTRL",
+        key = ".",
+        mods = "CMD",
         timeout_milliseconds = 1000,
       },
     }

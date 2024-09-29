@@ -17,11 +17,6 @@ zmodload zsh/zprof
 source ~/.config/zsh/alias.sh
 source ~/.config/zsh/utils.sh
 
-
-# Exports
-export NVM_DIR="$HOME/.nvm"
-export EDITOR=nvim
-
 # Load NVM
 nvm() {
   unset -f nvm
@@ -58,6 +53,13 @@ esac
 # bun completions
 [ -s "/Users/jobanmendpara/.bun/_bun" ] && source "/Users/jobanmendpara/.bun/_bun"
 
+export PATH="$HOME/.docker/bin:$PATH"
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Exports
+export NVM_DIR="$HOME/.nvm"
+export EDITOR=nvim
+

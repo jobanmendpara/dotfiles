@@ -6,7 +6,7 @@ local M = {
   end,
   matchSystemAppearance = function (appearance)
     if appearance:find("Light") then
-      return "Catppuccin Latte"
+      return "Catppuccin Frappe"
     else
       return "Catppuccin Mocha"
     end

@@ -22,24 +22,23 @@ config.send_composed_key_when_right_alt_is_pressed = false
 config.color_scheme = utils.matchSystemAppearance(wezterm.gui.get_appearance())
 config.default_gui_startup_args = { "connect", "mbp", "--workspace", "main" }
 config.font = wezterm.font_with_fallback({
-  "Geist Mono",
-  "SpaceMono Nerd Font",
-  "Monaspace Radon",
-  "Monaspace Krypton",
-  "Monaspace Neon",
-  "UbuntuMono Nerd Font",
-  "SauceCodePro Nerd Font",
   "JetBrainsMono Nerd Font",
-  "FuraMono Nerd Font",
-  "FiraCode Nerd Font",
   "Hack Nerd Font",
+  "GeistMono NFM",
+  "FiraCode Nerd Font",
+  "UbuntuMono Nerd Font",
+  "Monaspace Neon",
   "Monaspace Argon",
+  "Monaspace Krypton",
+  "SpaceMono Nerd Font",
+  "FuraMono Nerd Font",
+  "SauceCodePro Nerd Font",
   "IosevkaTerm Nerd Font",
+  "Monaspace Radon",
   "Monaspace Xenon",
 })
 
-config.font_size = 19
-config.freetype_load_target = 'HorizontalLcd'
+config.font_size = 20
 
 config.use_fancy_tab_bar = false
 config.adjust_window_size_when_changing_font_size = false

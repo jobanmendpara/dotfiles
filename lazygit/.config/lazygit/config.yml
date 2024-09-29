@@ -22,8 +22,6 @@ gui:
       - blue
     selectedLineBgColor:
       - blue # set to `default` to have no background colour
-    selectedRangeBgColor:
-      - blue
     cherryPickedCommitBgColor:
       - cyan
     cherryPickedCommitFgColor:
@@ -208,12 +206,10 @@ keybinding:
     pickCommit: 'p' # pick commit (when mid-rebase)
     revertCommit: 't'
     cherryPickCopy: 'c'
-    cherryPickCopyRange: 'C'
     pasteCommits: 'v'
     tagCommit: 'T'
     checkoutCommit: '<space>'
     resetCherryPick: '<c-R>'
-    copyCommitMessageToClipboard: '<c-y>'
     openLogMenu: '<c-l>'
     viewBisectOptions: 'b'
   stash:
@@ -222,8 +218,6 @@ keybinding:
   commitFiles:
     checkoutCommitFile: 'c'
   main:
-    toggleDragSelect: 'v'
-    toggleDragSelect-alt: 'V'
     toggleSelectHunk: 'a'
     pickBothHunks: 'b'
   submodules:
