@@ -1,5 +1,6 @@
 alias rm=trash
-alias v=nvim
+alias v='NVIM_APPNAME=nvim nvim'
+alias lv="NVIM_APPNAME=LazyVim nvim"
 alias ls="eza -a -1 -l -F --icons --group-directories-first"
 alias lc="nvim leetcode.nvim"
 alias sb="supabase"
@@ -13,6 +14,14 @@ function mk() {
   fi
 }
 
+function mkcd() {
+  if [[ $1 == */ ]]; then
+    mkdir -p "$1" && cd "$1"
+  else
+    mkdir -p "$(dirname "$1")" && touch "$1"
+  fi
+}
+
 function e() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
@@ -21,14 +30,6 @@ function e() {
 	fi
 	rm -f -- "$tmp"
 }
-
-alias skr="skhd --restart-service"
-alias sks="skhd --start-service"
-alias skq="skhd --stop-service"
-
-alias ybr="yabai --restart-service"
-alias ybs="yabai --start-service"
-alias ybq="yabai --stop-service"
 
 function ft() {
   RG_PREFIX="rg --hidden --column --line-number --no-heading --color=always --smart-case "
@@ -71,5 +72,3 @@ alias gs="git status"
 alias lg="lazygit"
 
 alias s="exec zsh"
-alias b="bun"
-alias bx="bunx"

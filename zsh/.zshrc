@@ -1,5 +1,6 @@
-## Created by Zap installer
+# Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+
 plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zap-zsh/zap-prompt"
@@ -9,57 +10,52 @@ plug "Aloxaf/fzf-tab"
 plug "jeffreytse/zsh-vi-mode"
 plug "zdharma/fast-syntax-highlighting"
 
-# Load and initialise completion system
 autoload -Uz compinit
 compinit
 zmodload zsh/zprof
 
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/Applications/nvim/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 source ~/.config/zsh/alias.sh
 source ~/.config/zsh/utils.sh
 
-# Load NVM
+export NVM_DIR="$HOME/.nvm"
+
 nvm() {
   unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-  nvm $@
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" --no-use
+  nvm "$@"
 }
 
-# Load BASH Completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
-# Map escape key for zsh-vi
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 ZVM_VI_SURROUND_BINDKEY=s-prefix
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH=/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="/Applications/nvim/bin:$PATH"
-
 eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
 
-source /Users/jobanmendpara/.config/broot/launcher/bash/br
+source "$HOME/.config/broot/launcher/bash/br"
 
-# pnpm
-export PNPM_HOME="/Users/jobanmendpara/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
-
-# bun completions
-[ -s "/Users/jobanmendpara/.bun/_bun" ] && source "/Users/jobanmendpara/.bun/_bun"
 
 export PATH="$HOME/.docker/bin:$PATH"
 
-# bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# Exports
-export NVM_DIR="$HOME/.nvm"
 export EDITOR=nvim
 
+if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then
+  . "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"
+fi
+
+if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then
+  . "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"
+fi

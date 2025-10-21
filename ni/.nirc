@@ -1,0 +1,7 @@
+defaultAgent=npm # default "prompt"
+
+globalAgent=npm
+
+runAgent=node
+
+useSfw=true
