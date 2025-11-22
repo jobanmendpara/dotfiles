@@ -1,6 +1,0 @@
-Aloxaf/fzf-tab
-jeffreytse/zsh-vi-mode
-zdharma/fast-syntax-highlighting
-
-zsh-users/zsh-autosuggestions
-zsh-users/zsh-completions
