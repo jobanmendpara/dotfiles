@@ -18,28 +18,15 @@ config.enable_kitty_keyboard = true
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
 
-config.max_fps = 240
-
 -- VISUALS
 config.color_scheme = utils.matchSystemAppearance(wezterm.gui.get_appearance())
 config.default_gui_startup_args = { "connect", "mbp", "--workspace", "main" }
 config.font = wezterm.font_with_fallback({
-	"JetBrainsMono Nerd Font",
-	"Hack Nerd Font",
-	"SpaceMono Nerd Font",
-	"GeistMono NFM",
-	"Monaspace Radon",
-	"Monaspace Krypton",
-	"UbuntuMono Nerd Font",
-	"FiraCode Nerd Font",
-	"IosevkaTerm Nerd Font",
-	"SauceCodePro Nerd Font",
-	"Monaspace Argon",
-	"Monaspace Neon",
-	"FuraMono Nerd Font",
+  "UbuntuMono Nerd Font",
+  "Hack Nerd Font",
 })
 
-config.font_size = 19
+config.font_size = 24
 
 config.use_fancy_tab_bar = false
 config.adjust_window_size_when_changing_font_size = false
@@ -56,12 +43,8 @@ config.window_padding = {
 config.keys = myKeymaps.keys
 config.leader = myKeymaps.leader
 config.pane_focus_follows_mouse = true
+config.window_close_confirmation = 'NeverPrompt'
 
 config.unix_domains = unix_domains
-
-local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
-bar.apply_to_config(config, {
-	position = "top",
-})
 
 return config

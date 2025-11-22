@@ -1,6 +1,5 @@
 {
     "diagnostics.globals": [
-        "xplr",
         "version",
         "wezterm",
         "action",

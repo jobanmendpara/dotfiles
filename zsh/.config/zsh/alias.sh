@@ -1,10 +1,10 @@
 alias rm=trash
-alias v='NVIM_APPNAME=nvim nvim'
+alias v="NVIM_APPNAME=nvim nvim"
 alias lv="NVIM_APPNAME=LazyVim nvim"
+alias oc="opencode"
 alias ls="eza -a -1 -l -F --icons --group-directories-first"
-alias lc="nvim leetcode.nvim"
-alias sb="supabase"
 alias ..="cd .."
+alias unstow="stow -D"
 
 function mk() {
   if [[ $1 == */ ]]; then
@@ -59,6 +59,8 @@ alias bi="brew install"
 alias bup="brew upgrade"
 alias bui="brew uninstall"
 alias bsr="brew services restart"
+alias blv="brew leaves"
+alias bli="brew list"
 
 alias ga="git add"
 alias gb="git branch"

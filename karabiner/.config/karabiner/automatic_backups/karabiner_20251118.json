@@ -2,7 +2,7 @@
     "profiles": [
         {
             "complex_modifications": {
-                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 75 },
+                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 125 },
                 "rules": [
                     {
                         "description": "Ctrl + BS/Del Keys to Option + BS/Del Keys",
